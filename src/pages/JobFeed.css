@@ -1,0 +1,98 @@
+
+
+/* Job Feed page base styles (indigo accents, gradient bg) */
+.jobfeed-container {
+  @apply min-h-screen bg-gradient-to-br from-indigo-50 to-purple-50 dark:from-indigo-950 dark:to-purple-950 p-4 md:p-8;
+}
+
+.jobfeed-content {
+  @apply max-w-6xl mx-auto;
+}
+
+.jobfeed-header {
+  @apply mb-8;
+}
+
+.jobfeed-title {
+  @apply text-4xl font-bold text-indigo-900 dark:text-indigo-100 mb-2;
+}
+
+.jobfeed-desc {
+  @apply text-gray-600 dark:text-indigo-400;
+}
+
+.jobfeed-search-bar {
+  @apply flex flex-col md:flex-row gap-4 mb-8;
+}
+
+.jobfeed-search-input {
+  @apply relative flex-1;
+}
+
+.jobfeed-search-input input {
+  @apply w-full pl-10 pr-4 py-3 border border-indigo-300 dark:border-indigo-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400 bg-white dark:bg-indigo-900 text-indigo-900 dark:text-indigo-100;
+}
+
+.jobfeed-search-button {
+  @apply bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700 transition flex items-center justify-center gap-2 md:w-auto;
+}
+
+.jobfeed-loading {
+  @apply flex justify-center items-center py-20;
+}
+
+.jobfeed-error {
+  @apply text-center py-10 text-red-600;
+}
+
+.jobfeed-best-matches {
+  @apply mb-12;
+}
+
+.jobfeed-best-matches-title {
+  @apply text-3xl font-bold text-indigo-900 dark:text-indigo-100 mb-6;
+}
+
+.jobfeed-best-matches-grid {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6;
+}
+
+.jobfeed-all-jobs {
+  @apply space-y-6;
+}
+
+.jobfeed-card {
+  @apply bg-white dark:bg-indigo-950 rounded-2xl shadow-lg border border-indigo-100 dark:border-indigo-900 p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1;
+}
+
+.jobfeed-card-title {
+  @apply text-xl font-bold text-indigo-900 dark:text-indigo-100 mb-2 line-clamp-2;
+}
+
+.jobfeed-card-company {
+  @apply text-indigo-700 dark:text-indigo-300 font-medium mb-3;
+}
+
+.jobfeed-card-match-badge {
+  @apply px-3 py-1 rounded-full text-white text-sm font-medium;
+}
+
+.jobfeed-card-details {
+  @apply flex flex-wrap gap-4 mb-4 text-indigo-600 dark:text-indigo-400 text-sm;
+}
+
+.jobfeed-card-description {
+  @apply text-gray-700 dark:text-indigo-300 mb-6 line-clamp-3;
+}
+
+.jobfeed-card-apply-button {
+  @apply bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700 transition font-medium;
+}
+
+.jobfeed-popup {
+  @apply bg-white dark:bg-indigo-950;
+}
+
+.jobfeed-chat-assistant {
+  @apply fixed bottom-8 right-8 z-50;
+}

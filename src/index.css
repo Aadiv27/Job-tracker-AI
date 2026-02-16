@@ -1,0 +1,98 @@
+/* src/index.css */
+
+/* Inter font - modern & professional */
+@import url('https://rsms.me/inter/inter.css');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@supports (font-variation-settings: normal) {
+  html { font-family: 'Inter var', sans-serif; }
+}
+
+html {
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+/* Custom theme variables (indigo/purple professional look) */
+:root {
+  --primary: #4f46e5; /* Indigo-600 */
+  --primary-hover: #4338ca; /* Indigo-700 */
+  --sidebar-bg: #1e1b4b; /* Deep indigo sidebar */
+  --bg-gradient-start: #f8fafc;
+  --bg-gradient-end: #e2e8f0;
+}
+
+.dark {
+  --primary: #818cf8;
+  --primary-hover: #6366f1;
+  --sidebar-bg: #0f172a;
+  --bg-gradient-start: #0f172a;
+  --bg-gradient-end: #1e293b;
+}
+
+/* Body background gradient */
+body {
+  @apply min-h-screen bg-gradient-to-br from-[var(--bg-gradient-start)] to-[var(--bg-gradient-end)];
+}
+
+/* Sidebar */
+.sidebar {
+  @apply bg-[var(--sidebar-bg)] text-white;
+}
+
+/* Sidebar nav links */
+.sidebar .nav-link {
+  @apply px-6 py-3 text-lg hover:bg-[rgba(255,255,255,0.1)] transition-colors;
+}
+
+.sidebar .nav-link.active {
+  @apply bg-[rgba(79,70,229,0.3)] border-l-4 border-indigo-500;
+}
+
+/* Primary buttons */
+.btn-primary {
+  @apply bg-[var(--primary)] hover:bg-[var(--primary-hover)] text-white font-medium;
+}
+
+/* Job cards hover lift */
+.job-card {
+  @apply transition-all duration-300;
+}
+
+.job-card:hover {
+  @apply shadow-2xl -translate-y-2;
+}
+
+/* Match badge */
+.match-badge {
+  @apply px-4 py-1.5 rounded-full text-white text-sm font-semibold;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-[var(--primary)] rounded;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-[var(--primary-hover)];
+}
+
+/* General polish */
+* {
+  @apply transition-colors duration-200;
+}
+
+/* Dark mode overrides */
+.dark .sidebar {
+  @apply bg-[var(--sidebar-bg)];
+}

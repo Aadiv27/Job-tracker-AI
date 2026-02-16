@@ -1,0 +1,56 @@
+/* Applications page base styles (grid layout, indigo accents) */
+.applications-container {
+  @apply min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-50 to-purple-50 dark:from-indigo-950 dark:to-purple-950 p-4 md:p-8;
+}
+
+.applications-content {
+  @apply w-full max-w-6xl;
+}
+
+.applications-title {
+  @apply text-3xl font-bold text-indigo-900 dark:text-indigo-100 mb-8;
+}
+
+.applications-empty {
+  @apply text-center py-20 text-indigo-600 dark:text-indigo-400;
+}
+
+.applications-empty-title {
+  @apply text-2xl font-semibold mb-2;
+}
+
+.applications-empty-desc {
+  @apply text-lg;
+}
+
+.applications-grid {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6;
+}
+
+.applications-card {
+  @apply bg-white dark:bg-indigo-950 rounded-2xl shadow-lg border border-indigo-100 dark:border-indigo-900 p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1;
+}
+
+.applications-card-title {
+  @apply text-xl font-bold text-indigo-900 dark:text-indigo-100 mb-2 line-clamp-2;
+}
+
+.applications-card-company {
+  @apply text-indigo-700 dark:text-indigo-300 font-medium mb-1;
+}
+
+.applications-card-location {
+  @apply text-sm text-indigo-500 dark:text-indigo-400 mb-3;
+}
+
+.applications-card-date {
+  @apply flex items-center gap-2 text-sm text-indigo-600 dark:text-indigo-400 mb-4;
+}
+
+.applications-status-badge {
+  @apply inline-block px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200;
+}
+
+.applications-link {
+  @apply block mt-4 text-indigo-600 dark:text-indigo-300 hover:underline text-sm font-medium;
+}

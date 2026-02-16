@@ -1,0 +1,39 @@
+.app-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 280px;
+  flex-shrink: 0;
+}
+
+.main-content {
+  flex: 1;
+  padding: 24px;
+}
+
+/* Job card hover */
+.job-card:hover {
+  @apply hover-lift;
+}
+
+/* Match badge */
+.match-badge {
+  @apply font-semibold;
+}
+
+/* Logout button */
+.logout-btn {
+  @apply bg-red-600 hover:bg-red-700;
+}
+
+/* Responsive sidebar */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 70px;
+  }
+  .nav-text {
+    display: none;
+  }
+}
