@@ -15,17 +15,23 @@
 
 /* Job card hover */
 .job-card:hover {
-  @apply hover-lift;
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease-out;
 }
 
 /* Match badge */
 .match-badge {
-  @apply font-semibold;
+  font-weight: 600;
 }
 
 /* Logout button */
 .logout-btn {
-  @apply bg-red-600 hover:bg-red-700;
+  background-color: #dc2626;
+}
+
+.logout-btn:hover {
+  background-color: #b91c1c;
 }
 
 /* Responsive sidebar */

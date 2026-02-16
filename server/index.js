@@ -1,12 +1,24 @@
-const fastify = require('fastify')({ logger: true });
-const path = require('path');
-const fs = require('fs-extra');
-const pdfParse = require('pdf-parse');
-const axios = require('axios');
-require('dotenv').config();
+import fastifyFactory from 'fastify';
+import path from 'path';
+import fs from 'fs-extra';
+import { Buffer } from 'buffer';
+import pdfParse from 'pdf-parse';
+import axios from 'axios';
+import cors from '@fastify/cors';
+import multipart from '@fastify/multipart';
+import dotenv from 'dotenv';
+import { fileURLToPath } from 'url';
+import process from 'process';
 
-fastify.register(require('@fastify/cors'), { origin: 'http://localhost:5173' });
-fastify.register(require('@fastify/multipart'), { limits: { fileSize: 5 * 1024 * 1024 } });
+dotenv.config();
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const fastify = fastifyFactory({ logger: true });
+
+fastify.register(cors, { origin: 'http://localhost:5173' });
+fastify.register(multipart, { limits: { fileSize: 5 * 1024 * 1024 } });
 
 const DATA_FILE = path.join(__dirname, 'data/users.json');
 const APPLICATIONS_FILE = path.join(__dirname, 'data/applications.json');
@@ -152,7 +164,7 @@ fastify.post('/api/applications', async (request, reply) => {
 
 // AI Chat for filter control
 fastify.post('/api/chat', async (request, reply) => {
-  const { message, currentFilters = {} } = request.body;
+  const { message, _currentFilters = {} } = request.body;
 
   if (!message) return reply.code(400).send({ error: 'No message' });
 
